@@ -1,5 +1,4 @@
-# Tarea de Algoritmos y Estructura de Datos
-# Listas Enlazadas
+# Tarea de Algoritmos y Estructura de Datos: Listas Enlazadas
 
 ## Integrantes:
 - Alexander Antonio Astorga Taccsi
