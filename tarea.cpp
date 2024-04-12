@@ -210,31 +210,60 @@ void List<T>::print() {
         temp = temp->next;
     }
 }
-
 int main() {
 
     // Ejemplo de uso de las funciones de la clase List
     List<int> intList;
+    cout << "Lista vacia? " << (intList.empty() ? "Si" : "No") << endl;
+
     intList.push_back(1);
-    intList.push_back(2);
     intList.push_back(3);
+    intList.push_back(2);
+    intList.push_back(5);
     intList.push_back(4);
+    intList.push_back(6);
 
     cout << "Lista de enteros: ";
     intList.print();
-    intList.clear();
     cout << endl;
+
+    cout << "Tamano de la lista: " << intList.size() << endl;
+
+    cout << "Primer elemento: " << intList.front() << endl;
+    cout << "Ultimo elemento: " << intList.back() << endl;
+
+    cout << "Elemento en el indice 2: " << intList[2] << endl;
+
+    cout << "Eliminando el primer elemento: " << intList.pop_front() << endl;
+    cout << "Lista despues de eliminar el primer elemento: ";
+    intList.print();
+    cout << endl;
+
+    cout << "Eliminando el ultimo elemento: " << intList.pop_back() << endl;
+    cout << "Lista despues de eliminar el ultimo elemento: ";
+    intList.print();
+    cout << endl;
+
+    intList.sort();
+    cout << "Lista ordenada: ";
+    intList.print();
+    cout << endl;
+
+    intList.reverse();
+    cout << "Lista invertida: ";
+    intList.print();
+    cout << endl;
+
+    intList.clear();
+    cout << "Lista vacia? " << (intList.empty() ? "Si" : "No") << endl;
 
     // Prueba de excepciones cuando la lista se encuentra vacía
     try{
         intList.pop_front();
-        intList.pop_back();
-
     }
     catch(const logic_error& e) {
-        cout << "Lista vacia" << endl;
+        cout << "Excepcion atrapada: " << e.what() << endl;
     }
-    cout << endl;
 
-
+    return 0;
 }
